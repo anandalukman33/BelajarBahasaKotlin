@@ -116,15 +116,41 @@
 //}
 
 // === Belajar Object Declaration ===
+//fun main () {
+//    Student.goToSchool()
+//
+//}
+//
+//object Student {
+//    var name = "Lukman"
+//
+//    fun goToSchool() {
+//        println("$name is going to school")
+//    }
+//}
+
+// === Belajar Interface ===
 fun main () {
-    Student.goToSchool()
+    val button = Button()
+    button.onTouch()
+}
+
+class Button: ButtonInterface {
+    override var buttonName: String = "Login"
+
+    override fun onClick() {
+        println("$buttonName clicked")
+    }
+
+    override fun onTouch() {
+        println("$buttonName touched")
+    }
 
 }
 
-object Student {
-    var name = "Lukman"
+interface ButtonInterface {
 
-    fun goToSchool() {
-        println("$name is going to school")
-    }
+    var buttonName: String
+    fun onClick()
+    fun onTouch()
 }
