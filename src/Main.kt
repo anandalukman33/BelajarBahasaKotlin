@@ -130,27 +130,54 @@
 //}
 
 // === Belajar Interface ===
+//fun main () {
+//    val button = Button()
+//    button.onTouch()
+//}
+//
+//class Button: ButtonInterface {
+//    override var buttonName: String = "Login"
+//
+//    override fun onClick() {
+//        println("$buttonName clicked")
+//    }
+//
+//    override fun onTouch() {
+//        println("$buttonName touched")
+//    }
+//
+//}
+//
+//interface ButtonInterface {
+//
+//    var buttonName: String
+//    fun onClick()
+//    fun onTouch()
+//}
+
+// === Belajar Visibility Modifiers ===
 fun main () {
-    val button = Button()
-    button.onTouch()
-}
-
-class Button: ButtonInterface {
-    override var buttonName: String = "Login"
-
-    override fun onClick() {
-        println("$buttonName clicked")
-    }
-
-    override fun onTouch() {
-        println("$buttonName touched")
-    }
+    //Deklarasi variabel customer
+    val customer = Customer()
+    customer.getCustStatus()
 
 }
 
-interface ButtonInterface {
+class Customer {
+    //deklarasi variabel name dan isActive
+    var name = "Joe"
+    var isActive = true
 
-    var buttonName: String
-    fun onClick()
-    fun onTouch()
+    // modifiers getCustName
+    fun getCustName(){
+        println("Customer name is $name")
+    }
+    // modifiers getCustStatus
+    fun getCustStatus(){
+        if (isActive) {
+            println("$name is a member")
+        } else {
+            println("$name is not a member")
+        }
+    }
 }
